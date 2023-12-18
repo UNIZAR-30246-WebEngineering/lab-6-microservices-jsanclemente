@@ -17,3 +17,10 @@ Y al volver a lanzar el servicio accounts comprobamos que ahora el puerto que es
 ![](<docs/Captura Eureka.png>)
 
 
+Cuando una segunda instancia de accounts service se ejecuta usando la nueva configuración, las dos instancias de account service corren simultaneamente y las dos se rpueden visualizar en eureka. (No dispongo de captura)
+
+**Cuando matamos el servicio accounts que corre en el puerto 2222**,  Eureka ha detectado que el account service ha fallado y lo ha eliminado de la lista de accounts services
+
+**¿Puede el servcio web ofrecer informacion de los accounts otra vez?** Si, El Servicio Web todavía puede hacer peticiones al servicio accounts porque Eureka actualizó su lista y cuando el web service le hace una peticion al accounts service, Eureka puede responder con un accounts service vivo.
+
+
